@@ -1,0 +1,326 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{needspace}
+\input{glyphtounicode}
+
+
+%----------FONT----------
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{roboto}   % main font
+\usepackage{roboto-mono}         % monospace font for \texttt{...}
+% Alternatives: comment out the two lines above and uncomment one of these
+% \usepackage[default]{lato}
+% \usepackage[default]{sourcesanspro}
+% \usepackage{XCharter}          % serif; pairs best with \scshape section titles
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\bfseries\raggedright\large
+}{}{0em}{\MakeUppercase}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \needspace{3\baselineskip}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Certification line: {name | issuer | details}{date}
+\newcommand{\resumeCert}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-9pt}
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Yoan Baychev} \\ \vspace{1pt}
+    \small Sofia, Bulgaria $|$ +359 878 463 311 $|$ \href{mailto:yoanbaychev@gmail.com}{\underline{yoanbaychev@gmail.com}} \\
+    \href{https://www.linkedin.com/in/yoan-baychev-ba356b361}{\underline{linkedin.com/in/yoan-baychev-ba356b361}} $|$
+    \href{https://github.com/ba1chev}{\underline{github.com/ba1chev}}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Junior AIOps Engineer}{Oct. 2026 -- Present}
+      {Several Clouds}{Sofia, Bulgaria (Hybrid)}
+      \resumeItemListStart
+        \resumeItem{Design and implement production AI environments on AWS, from architecture to integration and deployment}
+        \resumeItem{Build complex event-driven and data-driven systems for a range of AI use cases}
+        \resumeItem{Design secure cloud architectures for production workloads}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Site Reliability Engineer Intern}{Aug. 2025 -- Oct. 2026}
+      {SAP}{Sofia, Bulgaria (Hybrid)}
+      \resumeItemListStart
+        \resumeItem{\textbf{Verila GPT (internal):} Built a multi-agent AI assistant for SRE and DevOps teams -- LangGraph orchestration with Kubernetes and GitOps agents, hybrid RAG (dense + BM25, reranking, ChromaDB), a Poisson-based relevance model and an MCP server}
+        \resumeItem{\textbf{Joule Studio AI Alert Monitoring (internal):} Built an AI-assisted alerting platform -- OpenSearch alert ingestion and enrichment, alert correlation and root-cause hypotheses, service dependency graph, real-time dashboards and natural-language incident investigation}
+        \resumeItem{\textbf{SAP Build Apps (external):} Managed releases across dev, canary and staging landscapes with Argo CD; executed hotfixes, credential rotation and deployment monitoring}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{XDP47} $|$ \emph{Go, JavaScript, PostgreSQL, Docker, Kubernetes, Helm}}{\href{https://github.com/ba1chev/XDP47}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Go/Chi control plane with REST API and web UI for multi-tenant, wave-based rollouts to edge device fleets}
+            \resumeItem{Policy-gated scheduler (health gates, grace periods, offline skipping); agents verify SHA-256 artifacts}
+            \resumeItem{Containerized and deployed to Kubernetes via Helm, with CI/CD pipelines in GitHub Actions and Jenkins}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Vela47} $|$ \emph{Python, FastAPI, Ollama, PostgreSQL, Docker}}{\href{https://github.com/ba1chev/Vela47}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Question-answering and research system running two agents over a shared document store on local LLMs}
+            \resumeItem{RAG agent: query rewriting, hybrid retrieval (vector + BM25), LLM reranking and cited answers}
+            \resumeItem{Deep agent plans multi-step tasks and runs ReAct subagents in an isolated Docker sandbox}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Yox47} $|$ \emph{C++, x86 Assembly}}{\href{https://github.com/ba1chev/Yox47}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Full compiler pipeline: lexer, parser, AST, semantic analysis and x86 assembly code generation}
+            \resumeItem{Supports \texttt{int}, \texttt{float}, \texttt{char}, \texttt{bool}, heap-allocated \texttt{box[T]} arrays, typed functions, loops and \texttt{choose/case}}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{b47} $|$ \emph{C}}{\href{https://github.com/ba1chev/b47}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{AST-based parser for pipelines, subshells, \texttt{\&\&}/\texttt{||}, command sequencing and background jobs}
+            \resumeItem{I/O redirection and heredocs, environment variables, job control, signal handling, Readline history}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Vuln47} $|$ \emph{Python, PyTorch Geometric, tree-sitter}}{\href{https://github.com/ba1chev/Vuln47}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Vulnerability detection as graph classification over tree-sitter ASTs of C/C++ functions}
+            \resumeItem{Edge-aware GIN trained on PrimeVul ($\sim$236k functions, $\sim$3\% vulnerable) with class-weighted loss}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Battle-Of-64} $|$ \emph{C++, Win32, GDI+}}{\href{https://github.com/ba1chev/Battle-Of-64}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Chess engine and GUI written without the STL, using custom containers and manual memory management}
+            \resumeItem{Alpha-beta search with adjustable depth, full FIDE rules, save/load, Visitor and Factory patterns}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Chimera-47} $|$ \emph{Python}}{\href{https://github.com/ba1chev/Chimera-47}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Classifies 8 Windows malware families from behavioral API-call traces (MAL-API-2019, 7,107 samples)}
+            \resumeItem{Compared linear SVMs, softmax regression and Markov chains on TF-IDF features (best macro-F1: 0.59)}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Machine-Learning-Algorithms} $|$ \emph{C++17}}{\href{https://github.com/ba1chev/Machine-Learning-Algorithms}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Zero-dependency engine: linear/polynomial/RANSAC regression, trees, random forests, k-means, DBSCAN}
+            \resumeItem{GD/BFGS/L-BFGS optimizers and portable model files; compact weights for LLM agents and MCP tools}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Stochastic-Assistant} $|$ \emph{C++17}}{\href{https://github.com/ba1chev/StochasticAgent}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Probability library built from first principles without STL containers (custom \texttt{Vector}, \texttt{String}, \texttt{BitSet})}
+            \resumeItem{Models $\sigma$-algebras, random variables, discrete, continuous and joint distributions, plus independence checks}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Probabilistic-Quadrature} $|$ \emph{Python}}{\href{https://github.com/ba1chev/Probabilistic-quadrature}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Bayesian quadrature with Gaussian processes and active sampling in a modular integration library}
+            \resumeItem{Compared against grid, Gaussian-rule and Monte Carlo integration; includes interpolation tools}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Cloud-Audit} $|$ \emph{Python}}{\href{https://github.com/ba1chev/Cloud-Audit}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Cloud vs. on-premise analysis across 48 hypotheses: cost, performance, reliability, security}
+            \resumeItem{14+ data loaders (pricing APIs, benchmarks, surveys, NVD); bootstrap tests with FDR/Holm corrections}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Logic-Crusher} $|$ \emph{Python}}{\href{https://github.com/ba1chev/Logic-Crusher}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{GUI tool for Boolean expressions: syntax validation, simplification and Quine--McCluskey minimization}
+            \resumeItem{Karnaugh maps, Zhegalkin polynomials, Post class checks, AST and logic-circuit visualization}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{State-Exam-Preparation-FMI} $|$ \emph{C++}}{\href{https://github.com/ba1chev/State-Exam-Preparation-FMI}{\underline{GitHub}}}
+          \resumeItemListStart
+            \resumeItem{Developed topics and solved problems in C++ for the state exam at FMI}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item\small
+    \renewcommand{\arraystretch}{1.08}
+    \begin{tabularx}{0.97\textwidth}{@{}p{3.85cm}>{\raggedright\arraybackslash}X@{}}
+      \textbf{Languages}         & C, C++, Python, Go, x86 Assembly, Bash, SQL, JavaScript, TypeScript \\
+      \textbf{Cloud Platforms}   & AWS, Azure, GCP, Cloud Foundry \\
+      \textbf{DevOps \& GitOps}  & Docker, Kubernetes, Helm, Argo CD, Terraform, Vault, Jenkins, GitHub Actions \\
+      \textbf{Observability}     & Prometheus, Grafana, OpenSearch, Splunk \\
+      \textbf{AI Engineering}    & LangGraph, LangChain, LangSmith, RAG, Multi-Agent Systems, MCP, Ollama \\
+      \textbf{Machine Learning}  & PyTorch, PyTorch Geometric, scikit-learn, NumPy, Pandas, MLflow \\
+      \textbf{Databases}         & PostgreSQL, MongoDB, SQLite, ChromaDB \\
+      \textbf{Backend \& Testing} & FastAPI, Flask, Pydantic, SQLAlchemy, pytest, Playwright \\
+      \textbf{Systems}           & Linux, Networking (iptables, tcpdump, nmap), SIMD (SSE/AVX), Performance Tuning \\
+    \end{tabularx}
+ \end{itemize}
+
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+  \resumeSubHeadingListStart
+    \resumeCert
+      {\textbf{AWS Certified Developer -- Associate} $|$ \emph{Amazon Web Services} $|$ \href{https://www.credly.com/badges/450f8da6-c5b3-458b-a46e-c1adcd34fdff}{\underline{Credly}}}
+      {Nov. 2026}
+    \resumeCert
+      {\textbf{AWS Certified AI Practitioner} $|$ \emph{Amazon Web Services} $|$ \href{https://www.credly.com/badges/1a5e28b6-7025-430b-995b-46ed51056673}{\underline{Credly}}}
+      {Oct. 2026}
+    \resumeCert
+      {\textbf{Deep Learning} $|$ \emph{SoftUni} $|$ \href{https://softuni.bg/certificates/details/264893/8dd04aec}{\underline{Certificate}} -- transformers, sequence modelling, vision models}
+      {Aug. 2026}
+    \resumeCert
+      {\textbf{Machine Learning} $|$ \emph{SoftUni} $|$ \href{https://softuni.bg/certificates/details/262691/c3b69aa1}{\underline{Certificate}} -- linear regression, regularization, classification}
+      {Jul. 2026}
+    \resumeCert
+      {\textbf{Data Science} $|$ \emph{SoftUni} $|$ \href{https://softuni.bg/certificates/details/261258/bfeeab9f}{\underline{Certificate}} -- data processing and data visualization}
+      {May 2026}
+    \resumeCert
+      {\textbf{Math Concepts for Developers} $|$ \emph{SoftUni} $|$ \href{https://softuni.bg/certificates/details/258640/cf6e49c3}{\underline{Certificate}} -- linear algebra and applied mathematics}
+      {Mar. 2026}
+  \resumeSubHeadingListEnd
+  \vspace{2pt}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Sofia University ``St. Kliment Ohridski''}{Sofia, Bulgaria}
+      {B.Sc. in Software Engineering, Faculty of Mathematics and Informatics}{Oct. 2023 -- Present}
+    \resumeSubheading
+      {Sofia High School of Mathematics}{Sofia, Bulgaria}
+      {Diploma of Secondary Education, GPA: 5.92 / 6.00}{Sep. 2018 -- May 2023}
+    \resumeSubheading
+      {Primary School ``St. Ivan Rilski''}{Pernik, Bulgaria}
+      {Certificate of Basic Education, GPA: 6.00 / 6.00}{Sep. 2011 -- Jun. 2018}
+  \resumeSubHeadingListEnd
+  \vspace{2pt}
+
+
+%-----------AWARDS-----------
+\section{Awards}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item\small
+    \renewcommand{\arraystretch}{1.08}
+    \begin{tabularx}{0.97\textwidth}{@{}l@{\hspace{1.5em}}>{\raggedright\arraybackslash}X@{}}
+      \textbf{Christmas Mathematics Competition}        & 1st (2016, 2017, 2018), 2nd (2019), 5th (2015) \\
+      \textbf{Easter Mathematics Competition}           & 1st (2018, 2019), 2nd (2017), 5th (2016) \\
+      \textbf{Mihail Sotirov Mathematics Competition}   & 1st (2018, 2019), 2nd (2016, 2017) \\
+      \textbf{National Final Contest}                   & Winner (2015) \\
+      \textbf{Technical Drawing Olympiad}               & National Round (2018) \\
+      \textbf{Me and the Numbers}                       & Diplomas (2014, 2015) \\
+      \textbf{Mathematics Without Borders}              & Certificate (2015) \\
+      \textbf{Mathematics and Information Technologies} & Diploma (2016) \\
+    \end{tabularx}
+ \end{itemize}
+
+
+%-----------LANGUAGES & INTERESTS-----------
+\section{Languages \& Interests}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item\small
+    \renewcommand{\arraystretch}{1.08}
+    \begin{tabularx}{0.97\textwidth}{@{}p{3.85cm}>{\raggedright\arraybackslash}X@{}}
+      \textbf{Languages} & Bulgarian (native), English (advanced), German (basic) \\
+      \textbf{Interests} & Mathematics, AI, optimization algorithms, system design, operating systems, computer networks, low-level programming \\
+    \end{tabularx}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
